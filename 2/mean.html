@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mean</title>
+</head>
+<body>
+    <script>
+        function mean(...args) {
+          const numbers =args.filter(agr => typeof agr === 'number');
+          if (numbers.length === 0) return 0;
+
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            return sum / numbers.length;
+
+       }
+
+       console.log(mean(1, 2, 3,"a")); // 2
+       console.log(mean(true, 2, false)); // 2
+       console.log(mean()); // 0
+    </script>
+    
+</body>
+</html>
