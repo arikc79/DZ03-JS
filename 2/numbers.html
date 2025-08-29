@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numbers</title>
+</head>
+<body>
+    <script>
+        // function
+        function numbers(...agrs) {
+            return agrs.filter(agr => typeof agr === 'number').length;
+        }
+
+       console.log( numbers(5, 3, 9,'a',"abs"));
+       console.log(numbers(true, 2, false));  
+       console.log(numbers());  
+    
+       
+    </script>
+    
+</body>
+</html>
