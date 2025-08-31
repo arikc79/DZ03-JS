@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Розбір URL</title>
+</head>
+<body>
+<script>
+    // Ввід URL 
+    const urlString = prompt("Введіть URL-адресу:", "http://www.ufa.com.ua/utilites/hdd/out.php?sort=2");
+
+    try {
+       
+        const url = new URL(urlString);
+
+        // Протокол 
+        const protocol = url.protocol.replace(":", "");
+
+        // Хост
+        const host = url.host;
+
+        // Повний шлях 
+        const pathname = url.pathname;
+
+        // Шлях до папки
+        const path = pathname.substring(0, pathname.lastIndexOf("/") + 1);
+
+        // Ім'я файлу
+        const filename = pathname.substring(pathname.lastIndexOf("/") + 1);
+
+        // Рядок запиту
+        const query = url.search ? url.search.substring(1) : "";
+
+        // Вивід результату
+        let result = "Протокол: " + protocol + "\n";
+        result += "Хост: " + host + "\n";
+        result += "Шлях: " + path + "\n";
+        result += "Ім'я файлу: " + filename + "\n";
+        result += "Рядок запиту: " + query;
+
+        alert(result);
+
+    } catch (e) {
+        alert("⚠️ Введено некоректну адресу!");
+    }
+</script>
+</body>
+</html>
