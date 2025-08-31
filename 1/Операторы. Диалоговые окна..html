@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Збір даннтх</h1>
+    <script>
+        let FirstName;
+        let age;
+        let gender;
+        let email;
+        
+        
+        
+        do {
+            FirstName = prompt("Ваше ім'я?", FirstName)
+            age = parseInt(prompt("Ваш вік:", age));
+            gender = prompt("Ваш пол:",gender);
+            email = prompt("Ваш email:", email);
+           
+        }
+        while (confirm("Все вірно?"));
+        alert("ПІП: " + FirstName
+            + "\nВік: " + age 
+            + "\nПол: " + gender
+            + "\nEmail: " + email);
+    </script>
+    
+</body>
+</html>

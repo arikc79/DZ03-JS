@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        //  масив питань
+         const questions =[
+            "Вам подобається працювати за комп'ютером? (Так/Ні)", 
+            "Ви любите фантастику? (Так/Ні)", 
+            "Хотіли б ви служити в армії? (Так/Ні)",
+         ];
+
+         // Бали за відповідь "Так"
+            const scores = [1, 2, 3];
+             let total =0;
+             for ( let i=0; i<questions.length; i++){
+                const answer = prompt(questions[i]);
+                if (answer!== nuull){
+                    answer=answer.trim().toUpperCase();             
+                }
+                if (answer === "ТАК"){
+                    total += scores[i];
+                }
+                alert("Ваш загальний бал: " + total+ "балів");
+             }
+    </script>
+    
+</body>  
+</html>

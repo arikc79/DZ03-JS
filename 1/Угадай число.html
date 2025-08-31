@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let userGuess;
+        let attempts = 0;
+        
+        
+        do {
+            userGuess = parseInt(prompt("Вгадайте число від 1 до 100:", userGuess));
+            attempts++;
+            
+            if (userGuess < randomNumber) {
+                alert("Занадто мало! Спробуйте ще раз.");
+            } else if (userGuess > randomNumber) {
+                alert("Занадто багато! Спробуйте ще раз.");
+            } else if (userGuess === randomNumber) {
+                alert("Вітаємо! Ви вгадали число " + randomNumber + " за " + attempts + " спроб!");
+            } else {
+                alert("Будь ласка, введіть дійсне число.");
+            }
+        } while (userGuess !== randomNumber);
+    </script>
+</body>
+</html>

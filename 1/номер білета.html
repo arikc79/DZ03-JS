@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NomberTicket</title>
+</head>
+<body>
+     <script>
+        let number = parseInt(prompt("Введіть номер білета:"));
+        let sum1 = 0;
+        let sum2 = 0;
+               
+        
+        
+        do {
+            number = prompt("Введіть номер білета?", number );
+            for (let i = 0; i < 3; i++) {
+                sum1 += parseInt(number[i]);
+            }
+            alert("Сума перших трьох цифр: " + sum1);
+
+            for (let i = 3; i < 6; i++) {
+                sum2 += parseInt(number[i]);
+            }
+            alert("Сума других трьох цифр: " + sum2);
+
+        }
+        
+        while (confirm("Все вірно?"));
+        if (sum1 === sum2) {
+            alert("Вітаємо! У вас щасливий білет!");
+        } else {
+            alert("На жаль, у вас нещасливий білет.");
+        }
+    </script>
+    
+</body>
+</html>
