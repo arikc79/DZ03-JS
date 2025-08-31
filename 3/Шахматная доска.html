@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Шахова дошка</title>
+</head>
+<body>
+<script>
+  // Створюємо таблицю
+  const table = document.createElement("table");
+  table.setAttribute("border", "1");
+  table.setAttribute("cellspacing", "0");
+  table.setAttribute("cellpadding", "20");
+
+  // генеруємо  рядкі
+  for (let i = 0; i < 8; i++) {
+    const tr = document.createElement("tr");
+
+
+    for (let j = 0; j < 8; j++) {
+      const td = document.createElement("td");
+
+      // фарбуемо
+      if ((i + j) % 2 === 0) {
+        td.setAttribute("bgcolor", "white"); // біла
+      } else {
+        td.setAttribute("bgcolor", "black"); // чорна
+      }
+
+      tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+  }
+
+  // Додаємо таблицю в документ
+  document.body.appendChild(table);
+</script>
+</body>
+</html>
