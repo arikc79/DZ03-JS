@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Перевірка ПІБ</title>
+</head>
+<body>
+<script>
+    // Неприпустимі символи (цифри та спецсимволи)
+    const invalidChars = "0123456789!@#$%^&*()_+=-[]{};:'\",<>?/\\|`~";
+
+    // Ввід від користувача
+    const fullName = prompt("Введіть ваше ПІБ:");
+
+    let hasInvalid = false;
+
+    if (fullName !== null) {
+        for (let char of fullName) {
+            if (invalidChars.includes(char)) {
+                hasInvalid = true;
+                break;
+            }
+        }
+
+        if (hasInvalid) {
+            alert("⚠️ ПІБ містить неприпустимі символи!");
+        } else {
+            let formattedName = fullName
+                .trim() 
+                .split(/\s+/)
+                .map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                )
+                .join(" ");
+
+            alert("✅ ПІБ введено правильно: " + formattedName);
+        }
+    }
+</script>
+</body>
+</html>
