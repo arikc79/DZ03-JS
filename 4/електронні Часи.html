@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Електронні годинники</title>
+    <style>
+        .clock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0;
+        }
+        .clock img {
+            width: 50px; 
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <img id="hour1" src="4/clock/0.gif" alt="0">
+        <img id="hour2" src="4/clock/0.gif" alt="0">
+        <img src="/clock/points.gif" alt=":">
+        <img id="min1" src="4/clock/0.gif" alt="0">
+        <img id="min2" src="4/clock/0.gif" alt="0">
+        <img src="/clock/points.gif" alt=":">
+        <img id="sec1" src="4/clock/0.gif" alt="0">
+        <img id="sec2" src="4/clock/0.gif" alt="0">
+    </div>
+
+
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            //Для годин
+            document.getElementById('hour1').src = `/clock/${hours[0]}.gif`;
+            document.getElementById('hour2').src = `/clock/${hours[1]}.gif`;
+
+            //Для хвилин
+            document.getElementById('min1').src = `/clock/${minutes[0]}.gif`;
+            document.getElementById('min2').src = `/clock/${minutes[1]}.gif`;
+
+            // Для секунд
+            document.getElementById('sec1').src = `/clock/${seconds[0]}.gif`;
+            document.getElementById('sec2').src = `/clock/${seconds[1]}.gif`;
+        }
+
+       
+        updateClock();
+
+        // Оновлення кожну секунду
+        setInterval(updateClock, 1000);
+
+        // Синхронізація з початком
+        function syncClock() {
+            const now = new Date();
+            const milliseconds = now.getMilliseconds();
+            const timeToNextSecond = 1000 - milliseconds;
+
+          
+            setTimeout(() => {
+                updateClock();
+               
+                setInterval(updateClock, 1000);
+            }, timeToNextSecond);
+        }
+
+        // Запускаємо синхронізацію
+        syncClock();
+    </script>
+</body>
+</html>
